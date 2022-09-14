@@ -14,7 +14,7 @@ export default function App() {
       const url = data[randomData].url
       setMemes(url)
   }
-  const mapArray = meme.map(item => <Main getMeme={getMeme}/>)
+  const mapArray = meme.map(item => <Main getMeme={getMeme} url={url}/>)
 
   return (
     <>

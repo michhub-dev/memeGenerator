@@ -19,6 +19,7 @@ export default function Main(props){
              className="h-15 w-[100%] grid-cols-[1 /-1]  text-center rounded-md shadow-md text-white text-lg font-medium bg-gradient-to-r from-sky-500 to-indigo-500">
                 Get new meme
             </button>
+            <div>{props.url}</div>
          </main>
         </>
     )
