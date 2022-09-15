@@ -5,12 +5,12 @@ export default function Main(props){
          <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-4 w-50 m-10 h-10 p-6 " >
             <input
              type="text"
-             placeholder="Enter text" 
+             placeholder="Top text" 
              className="border p-4 border-grey-500 shadow-md outline-none text-center rounded-md"
              />
             <input
              type="text" 
-             placeholder="Enter text" 
+             placeholder="Bottom text" 
              className="border p-4 border-grey-500 shadow-md outline-none text-center rounded-md"
              /><br/>
             <button
@@ -19,7 +19,7 @@ export default function Main(props){
              className="h-15 w-[100%] grid-cols-[1 /-1]  text-center rounded-md shadow-md text-white text-lg font-medium bg-gradient-to-r from-sky-500 to-indigo-500">
                 Get new meme
             </button>
-            <div>{props.url}</div>
+            <img src={props.memeInfo} />
          </main>
         </>
     )
