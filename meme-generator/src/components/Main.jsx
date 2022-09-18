@@ -52,10 +52,21 @@ export default function Main(){
              className="h-15 w-[100%] grid-cols-[1 /-1]  text-center rounded-md shadow-md text-white text-lg font-medium bg-gradient-to-r from-sky-500 to-indigo-500">
                 Get new meme
             </button>
-            <div>
-            <img src={memeInfo.imageData} />
-            <h2>{memeInfo.topText}</h2>
-            <h2>{memeInfo.bottomText}</h2>
+            <div className="relative ">
+            <img 
+             src={memeInfo.imageData}
+             className="bg-no-repeat h-15 w-[100%] rounded-sm"
+             />
+            <h2 
+            className="uppercase tracking-wider shadow-md top-0 text-white text-center my-15 mx-0 py-0 px-1.3 text-7xl translate-x-[50%] font-extrabold absolute w-[80%] left-[50%]"
+            >
+                {memeInfo.topText}
+            </h2>
+            <h2 
+            className="text-center flex justify-center uppercase tracking-wide shadow-lg text-white text-8 text-7xl font-extrabold absolute bottom-0"
+            >
+                {memeInfo.bottomText}
+            </h2>
             </div>
             
          </main>
