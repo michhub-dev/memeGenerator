@@ -29,7 +29,7 @@ export default function Main(){
 }
     return(
         <>
-         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-4 w-50 m-10 h-10 p-6 " >
+         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-3 w-50 m-10 h-10 md:h-1/5 p-6 md:mx-6 md:w-1/3 " >
             <input
              type="text"
              name="topText"
@@ -55,15 +55,15 @@ export default function Main(){
             <div className="relative ">
             <img 
              src={memeInfo.imageData}
-             className="bg-no-repeat h-15 w-[100%] rounded-sm"
+             className="bg-no-repeat h-auto max-w-full rounded-sm"
              />
             <h2 
-            className="uppercase tracking-wider shadow-md top-0 text-white text-center my-15 mx-0 py-0 px-1.3 text-7xl translate-x-[50%] font-extrabold absolute w-[80%] left-[50%]"
+            className="uppercase tracking-wider md:w-15 md:text-[28px] shadow-black top-0 text-white text-center my-15 mt-10 px-1.3 text-7xl translate-x-[50%] left-8 font-extrabold absolute "
             >
                 {memeInfo.topText}
             </h2>
             <h2 
-            className="text-center flex justify-center uppercase tracking-wide shadow-lg text-white text-8 text-7xl font-extrabold absolute bottom-0"
+            className="text-center md:w-15 md:text-[28px] flex justify-center uppercase mb-8 tracking-wide shadow-black text-white text-8 text-7xl font-extrabold translate-x-[50%] left-8 absolute bottom-0"
             >
                 {memeInfo.bottomText}
             </h2>
