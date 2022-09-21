@@ -1,8 +1,8 @@
-import memeData from "../memeData"
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 
 export default function Main(){
-    const [meme, setMemes] = useState(memeData)
+    const [meme, setMemes] = useState([])
 
     const [memeInfo, setMemeInfo] = useState({
         topText: "",
@@ -12,9 +12,8 @@ export default function Main(){
 
       //Generate random meme image 
         function getMeme(){
-            const arrayData = meme.data.memes
-        const randomData = Math.floor(Math.random() * arrayData.length)
-            const url = arrayData[randomData].url
+        const randomData = Math.floor(Math.random() * meme.length)
+            const url = meme[randomData].url
             setMemeInfo(prevState => ({
             ...prevState, 
             imageData: url}))
@@ -26,10 +25,23 @@ export default function Main(){
             ...prevData,
             [name] : value
         }))
+
 }
+
+  useEffect(() => {
+    async function fetchMemes(){
+        const res = await fetch("https://api.imgflip.com/get_memes")
+        const data = await res.json()
+          setMemes(data.data.memes)
+   
+    }
+    fetchMemes()
+  
+  }, [])
+  
     return(
         <>
-         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-3 w-50 m-10 h-10 md:h-1/5 p-6 md:mx-6 md:w-1/3 " >
+         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-3 items-center w-50 m-10 h-10 md:h-1/5 p-6 md:mx-6 md:w-1/3 " >
             <input
              type="text"
              name="topText"
@@ -63,7 +75,7 @@ export default function Main(){
                 {memeInfo.topText}
             </h2>
             <h2 
-            className="text-center md:w-15 md:text-[28px] flex justify-center uppercase mb-8 tracking-wide shadow-black text-white text-8 text-7xl font-extrabold translate-x-[50%] left-8 absolute bottom-0"
+            className="text-center md:w-15 md:text-[28px]  flex justify-center uppercase mb-8 tracking-wide shadow-black text-white text-8 text-7xl font-extrabold translate-x-[50%] left-8 absolute bottom-0"
             >
                 {memeInfo.bottomText}
             </h2>
