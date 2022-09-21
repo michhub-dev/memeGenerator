@@ -10,7 +10,7 @@ export default function Main(){
         imageData: "https://i.imgflip.com/30b1gx.jpg" 
       })
 
-      //Generate random meme image 
+      //Generate random meme image. Button function  
         function getMeme(){
         const randomData = Math.floor(Math.random() * meme.length)
             const url = meme[randomData].url
@@ -18,7 +18,7 @@ export default function Main(){
             ...prevState, 
             imageData: url}))
         }
-
+//A Function that listens to the change in input 
         function handleChange(event){
         const {name, value} = event.target
         setMemeInfo(prevData => ({
@@ -27,7 +27,7 @@ export default function Main(){
         }))
 
 }
-
+//Fetch meme data from the api and save to state variable 
   useEffect(() => {
     async function fetchMemes(){
         const res = await fetch("https://api.imgflip.com/get_memes")
