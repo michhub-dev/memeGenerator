@@ -41,14 +41,14 @@ export default function Main(){
   
     return(
         <>
-         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-3 items-center w-50 m-10 h-10 md:h-1/5 p-6 md:mx-6 md:w-1/3 " >
+         <main className="grid grid-cols-[40px 40px / 1fr 1fr] gap-2 items-center w-50 m-10 h-10 md:h-1/5 p-6 md:mx-6 md:w-1/3 " >
             <input
              type="text"
              name="topText"
              value={memeInfo.topText}
              onChange={handleChange}
              placeholder="Top text" 
-             className="border p-4 border-grey-500 shadow-md outline-none text-center rounded-md"
+             className="border p-4 text-blue-900 font-bold placeholder-sky-700 focus:bg-slate-400 border-grey-500 shadow-md outline-none text-center rounded-md"
              />
             <input
              type="text" 
@@ -56,7 +56,7 @@ export default function Main(){
              value={memeInfo.bottomText}
              onChange={handleChange}
              placeholder="Bottom text" 
-             className="border p-4 border-grey-500 shadow-md outline-none text-center rounded-md"
+             className="border p-4 text-blue-900 font-bold placeholder-sky-700 focus:bg-slate-400 border-grey-500 shadow-md outline-none text-center rounded-md"
              /><br/>
             <button
              onClick={getMeme}
